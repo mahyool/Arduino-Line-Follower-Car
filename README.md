@@ -38,6 +38,8 @@ Components
 
 
 Circuit Diagram
+![Arduino Diagram](images/robot-car.jpg)
+
 
 
 How It Works
