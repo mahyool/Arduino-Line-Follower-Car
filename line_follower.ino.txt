@@ -1,0 +1,43 @@
+// Pin configuration
+#define LEFT_SENSOR 2
+#define RIGHT_SENSOR 3
+#define MOTOR_A1 5
+#define MOTOR_A2 6
+#define MOTOR_B1 9
+#define MOTOR_B2 10
+
+void setup() {
+  // Sensor pins
+  pinMode(LEFT_SENSOR, INPUT);
+  pinMode(RIGHT_SENSOR, INPUT);
+
+  // Motor pins
+  pinMode(MOTOR_A1, OUTPUT);
+  pinMode(MOTOR_A2, OUTPUT);
+  pinMode(MOTOR_B1, OUTPUT);
+  pinMode(MOTOR_B2, OUTPUT);
+}
+
+void loop() {
+  bool left = digitalRead(LEFT_SENSOR);
+  bool right = digitalRead(RIGHT_SENSOR);
+
+  if (left && !right) {         // Turn left
+    moveMotor(MOTOR_A1, MOTOR_A2, LOW);
+    moveMotor(MOTOR_B1, MOTOR_B2, HIGH);
+  } else if (!left && right) {  // Turn right
+    moveMotor(MOTOR_A1, MOTOR_A2, HIGH);
+    moveMotor(MOTOR_B1, MOTOR_B2, LOW);
+  } else if (left && right) {   // Move forward
+    moveMotor(MOTOR_A1, MOTOR_A2, HIGH);
+    moveMotor(MOTOR_B1, MOTOR_B2, HIGH);
+  } else {                      // Stop
+    moveMotor(MOTOR_A1, MOTOR_A2, LOW);
+    moveMotor(MOTOR_B1, MOTOR_B2, LOW);
+  }
+}
+
+void moveMotor(int pin1, int pin2, bool state) {
+  digitalWrite(pin1, state);
+  digitalWrite(pin2, !state);
+}
