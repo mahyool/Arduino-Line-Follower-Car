@@ -45,22 +45,23 @@ Features
 # 4 How It Works
 	1	IR Sensors detect whether they are over a black line (low reflectivity) or white surface (high reflectivity).
 	2	Arduino reads the sensor outputs and determines the car’s movement:
-	◦	Turn left if the left sensor detects the line.
-	◦	Turn right if the right sensor detects the line.
-	◦	Move forward if both sensors detect the line.
-	◦	Stop if no sensors detect the line.
+	- Turn left if the left sensor detects the line.
+	- Turn right if the right sensor detects the line.
+	- Move forward if both sensors detect the line.
+	- Stop if no sensors detect the line.
 	3	Motor Driver controls the speed and direction of the motors based on Arduino signals.
 
 # 5 Setup Instructions
 	1	Hardware Assembly:
-	◦	Mount the Arduino, motor driver, and sensors on the chassis.
-	◦	Connect motors, sensors, and power supply as per the circuit diagram.
+	- Mount the Arduino, motor driver, and sensors on the chassis.
+	- Connect motors, sensors, and power supply as per the circuit diagram.
 	2	Upload Code:
-	◦	Open the Arduino IDE.
-	◦	Upload the provided line_follower.ino file to your Arduino.
+	- Open the Arduino IDE.
+	- Upload the provided line_follower.ino file to your Arduino.
 	3	Test the Car:
-	◦	Place the car on a track with a clear black line on a white surface.
-	◦	Adjust sensor positions if necessary for optimal detection.
+	- Place the car on a track with a clear black line on a white surface.
+	- Adjust sensor positions if necessary for optimal detection.
+
 
 # 6 Code
 Here’s the core Arduino code for the project. The full code can be found in the line_follower.ino file in this repository.
